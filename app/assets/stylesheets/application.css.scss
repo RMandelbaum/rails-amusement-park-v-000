@@ -23,3 +23,56 @@ body {
   padding-top: 70px;
   padding-bottom: 30px;
 }
+
+.left-pic{
+    float: left;
+    position: relative;
+    margin: 5px;
+}
+
+.pic{
+padding: 20px;
+display: inline-block;
+background-color: #EEEEEE;
+border-radius: 7px;
+vertical-align: middle;
+margin: 10px;
+}
+
+.right-info{
+  margin: 5px;
+  float: left;
+  position: relative;
+  height: 325px;
+  width: 550px;
+  background-color: #EEEEEE;
+  text-align: center;
+  padding: 80px 60px 20px 60px;
+  border-radius: 7px;
+}
+
+.container{
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.info{
+  padding: 20px;
+  display: inline-block;
+  background-color: #EEEEEE;
+  text-align: right;
+  border-radius: 7px;
+  vertical-align: middle;
+  margin: 10px;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.center{
+    text-align: center;
+    box-sizing: border-box;
+}

@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Welcome Back to the Theme Park!</h2>
+    <% if @message %>
+      <h3><%= @message %></h3>
+    <% end %>
+<div class ="center">
+  <div class ="left-pic">
+    <img src="http://www.washingtonpost.com/wp-srv/special/health/why-roller-coasters-make-us-scream/images/rollercoasterBackground.jpg" width="550" height="325">
+  </div>
+  <div class="info">
+    <% if @user.admin %>
+        <p>ADMIN</p>
+    <% end %>
+    <h2><%= @user.name %></h2>
+    <p>Tickets: <%= @user.tickets %></p>
+    <p>Mood: <%= @user.mood %></p>
+    <p>Height: <%= @user.height %></p>
+    <%= link_to "Edit", edit_user_path(@user) %><br>
+    <%= link_to "Log Out", logout_path %><br>
+    <%= link_to "See attractions", attractions_path %>
+  </div>
+</div>
+</div>

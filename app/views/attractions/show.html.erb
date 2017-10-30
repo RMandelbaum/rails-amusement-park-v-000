@@ -1,0 +1,26 @@
+<div class = "container">
+  <div class = "center">
+    <div class= "pic">
+      <img src="http://www.allthingsclipart.com/05/amusement.park.05.jpg" height="250">
+    </div>
+    <div class="info">
+      <h2><%= @attraction.name %></h2>
+      <p>Total Number of Riders: <%= @attraction.users.count %></p>
+      <p>Ticket Requirements: <%= @attraction.tickets %></p>
+      <p>Height Requirement: <%= @attraction.min_height %></p>
+      <p>Nausea Rating: <%= @attraction.nausea_rating %></p>
+      <p>Happiness Rating: <%= @attraction.happiness_rating %></p>
+      <% if @user.admin %>
+          <p><%= link_to "Edit Attraction", edit_attraction_path(@attraction) %></p>
+      <% else %>
+          <form action="/rides/new" method="post">
+             <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+             <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
+             <%= tag(:input, :type => "hidden", :name => :attraction_id, :value => @attraction.id) %>
+             <input type="submit" value="Go on this ride">
+          </form>
+      <% end %>
+      <p><%= link_to "Back", attractions_path %></p>
+    </div>
+  </div>
+</div>
